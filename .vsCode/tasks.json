@@ -28,7 +28,7 @@
         },
         {
             "label": "CVTRPGFREE - Build all",
-            "command": "ssh ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd ${input:targetSystemProjectPath};gmake all'",
+            "command": "ssh ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd /home/${input:targetSystemUser}${input:targetSystemProjectPath};gmake all'",
             "type": "shell",
             "group": {
                 "kind": "build",
