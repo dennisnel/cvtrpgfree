@@ -4,8 +4,8 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile current file",
-            "command": "ssh -t ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd ${input:targetSystemProjectPath};gmake ${fileBasename} OUTPUT=*PRINT'",
+            "label": "CVTRPGFREE - Compile current file",
+            "command": "ssh -t ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd /home/${input:targetSystemUser}${input:targetSystemProjectPath};gmake ${fileBasename} OUTPUT=*PRINT'",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -27,7 +27,7 @@
             }
         },
         {
-            "label": "Build all",
+            "label": "CVTRPGFREE - Build all",
             "command": "ssh ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd ${input:targetSystemProjectPath};gmake all'",
             "type": "shell",
             "group": {
@@ -39,8 +39,8 @@
             ]
         },
         {
-            "label": "Build release savefile",
-            "command": "ssh ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd ${input:targetSystemProjectPath};gmake release'",
+            "label": "CVTRPGFREE - Build release savefile",
+            "command": "ssh ${input:targetSystemUser}@${input:targetSystemName} -p ${input:targetSystemPort} 'PATH=/QOpenSys/pkgs/bin:$PATH;cd /home/${input:targetSystemUser}${input:targetSystemProjectPath};gmake release'",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -78,7 +78,7 @@
             "id": "targetSystemProjectPath",
             "type": "promptString",
             "description": "Specify the target system project path",
-            "default": "./prj/cvtrpgfree/",
+            "default": "/prj/cvtrpgfree/",
             "password": false
         }
     ]
