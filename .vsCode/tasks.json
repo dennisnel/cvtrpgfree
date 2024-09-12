@@ -1,4 +1,4 @@
-﻿{
+{
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
@@ -49,6 +49,37 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "targetSystemUser",
+            "type": "promptString",
+            "description": "Specify the target system user name",
+            "password": false
+        },
+        {
+            "id": "targetSystemName",
+            "type": "promptString",
+            "description": "Specify the target system name",
+            "password": false
+        },
+        {
+            "id": "targetSystemPort",
+            "type": "pickString",
+            "description": "Specify the target system port for ssh",
+            "options": [
+                "22",
+                "2222"
+            ],
+            "default": "2222"
+        },
+        {
+            "id": "targetSystemProjectPath",
+            "type": "promptString",
+            "description": "Specify the target system project path",
+            "default": "/prj/cvtrpgfree/",
+            "password": false
         }
     ]
 }
